@@ -17,9 +17,15 @@ document.getElementById('history-btn').addEventListener('click', historyBtnFunct
 
 document.getElementById('donation-btn').addEventListener('click', donationBtnFunction);
 
+noakhaliInputAmount.addEventListener('keyup', setOnClickNoa);
+
 document.getElementById('noakhali-button').addEventListener('click', calcNoakhali);
 
+feniInputAmount.addEventListener('keyup', setOnClickFeni);
+
 document.getElementById('feni-button').addEventListener('click', calcFeni);
+
+quotaInputAmount.addEventListener('keyup', setOnClickQuota);
 
 document.getElementById('quota-button').addEventListener('click', calcQuota);
 
@@ -40,42 +46,55 @@ function calcNoakhali() {
     const amount = Number(noakhaliInputAmount.value);
     const initAmount = makeNumber(noakhaliTotalSpan);
     const myAmount = makeNumber(navAmountSpan);
-    if (amount > myAmount) {
-        alert('Invalid Amount. Try again!');
-        return
+    if (amount < 0 || amount > myAmount || amount == '' || isNaN(amount)) {
+            alert('Invalid Amount. Try again!');
+            const modalId = document.getElementById('noakhali-button');
+            modalId.removeAttribute('onclick');
+            return
+    }else{
+        const myNewAmount = myAmount - amount;
+        navAmountSpan.innerText = myNewAmount;
+        const newAmount = initAmount + amount;
+        noakhaliTotalSpan.innerText = newAmount;
+        noakhaliInputAmount.value = '';
+        showHistory(amount, 'noakhali-title');
     }
-    // if (amount1 > amount2 || amount1 === '' || isNaN(amount1)) {
-    //     alert('Invalid Amount. Try again!');
-    //     return;
-    // }
-    const myNewAmount = myAmount - amount;
-    navAmountSpan.innerText = myNewAmount;
-    const newAmount = initAmount + amount;
-    noakhaliTotalSpan.innerText = newAmount;
-    noakhaliInputAmount.value = '';
-    showHistory(amount, 'noakhali-title');
 }
 function calcFeni() {
     const amount = Number(feniInputAmount.value);
     const initAmount = makeNumber(feniTotalSpan);
     const myAmount = makeNumber(navAmountSpan);
-    const myNewAmount = myAmount - amount;
-    navAmountSpan.innerText = myNewAmount;
-    const newAmount = initAmount + amount;
-    feniTotalSpan.innerText = newAmount; 
-    feniInputAmount.value = '';
-    showHistory(amount, 'feni-title');
+    if (amount < 0 || amount > myAmount || amount == '' || isNaN(amount)) {
+        alert('Invalid Amount. Try again!');
+        const modalId = document.getElementById('feni-button');
+        modalId.removeAttribute('onclick');
+        return
+    }else{
+        const myNewAmount = myAmount - amount;
+        navAmountSpan.innerText = myNewAmount;
+        const newAmount = initAmount + amount;
+        feniTotalSpan.innerText = newAmount;
+        feniInputAmount.value = '';
+        showHistory(amount, 'feni-title');
+    }
 }
 function calcQuota() {
     const amount = Number(quotaInputAmount.value);
     const initAmount = makeNumber(quotaTotalSpan);
     const myAmount = makeNumber(navAmountSpan);
-    const myNewAmount = myAmount - amount;
-    navAmountSpan.innerText = myNewAmount;
-    const newAmount = initAmount + amount;
-    quotaTotalSpan.innerText = newAmount;
-    quotaInputAmount.value = '';
-    showHistory(amount, 'quota-title');
+    if (amount < 0 || amount > myAmount || amount == '' || isNaN(amount)) {
+        alert('Invalid Amount. Try again!');
+        const modalId = document.getElementById('quota-button');
+        modalId.removeAttribute('onclick');
+        return
+    }else{
+        const myNewAmount = myAmount - amount;
+        navAmountSpan.innerText = myNewAmount;
+        const newAmount = initAmount + amount;
+        quotaTotalSpan.innerText = newAmount;
+        quotaInputAmount.value = '';
+        showHistory(amount, 'quota-title');
+    }
 }
 
 function blogWindow() {
@@ -84,9 +103,6 @@ function blogWindow() {
 function backHome() {
     window.location.href = "/index.html";
 }
-
-
-// famine-2024 at Feni, Bangladesh
 function showHistory(inputAmount, id) {
     const title = titleGenerator(id)
     const history1 = `<div class="border-2 rounded-2xl p-8 space-y-4">
@@ -99,11 +115,31 @@ function showHistory(inputAmount, id) {
                 </div>`
     historySection.innerHTML += history1;
 }
+function setOnClickNoa() {
+    const input = Number(noakhaliInputAmount.value);
+    if (typeof input == 'number' || input > 0){
+        const modalId = document.getElementById('noakhali-button');
+        modalId.setAttribute('onclick', "my_modal_1.showModal()");
+    }
+}
+function setOnClickFeni() {
+    const input = Number(noakhaliInputAmount.value);
+    if (typeof input == 'number' || input > 0){
+        const modalId = getDataById('feni-button');
+        modalId.setAttribute('onclick', "my_modal_1.showModal()");
+    }
+}
+function setOnClickQuota() {
+    const input = Number(noakhaliInputAmount.value);
+    if (typeof input == 'number' || input > 0){
+        const modalId = getDataById('quota-button');
+        modalId.setAttribute('onclick', "my_modal_1.showModal()");
+    }
+}
 // Re-usable Function
 function getDataById(id) {
     return document.getElementById(id);
 }
-
 function addProperty(element, property) {
     return element.classList.add(property);
 }
@@ -116,6 +152,3 @@ function makeNumber(el) {
 function titleGenerator(id) {
     return getDataById(id).innerText;
 }
-    
-
-

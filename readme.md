@@ -23,11 +23,11 @@
     - The card’s current donation amount will increase. ✅
     - A meaningful notification will be added to the History section. ✅
 - **Input Validation**:
-  - Show an alert if invalid data is found and stop the transaction.
+  - Show an alert if invalid data is found and stop the transaction. ✅
   - Validate the donation amount:
-    - If the donation amount is greater than the account balance.
-    - If the input field contains an invalid number.
-    - If the input field is empty.
+    - If the donation amount is greater than the account balance. ✅
+    - If the input field contains an invalid number. ✅
+    - If the input field is empty. ✅
 - ✅ **History Section**:
   - The history section will display transaction notifications, including:
     - Date and time of the transaction. ✅
@@ -37,6 +37,8 @@
 ## Challenges
 
 - **Sticky Navbar**: Make the navbar sticky to the top of the page. 
+
+
 - ✅ **Blog Page**: Create a `blog.html` file and link it to the main page:
   - The blog page should contain 4 questions and their answers:
     1. What is the Document Object Model (DOM)?

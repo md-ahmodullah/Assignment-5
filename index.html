@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,57 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <header class="bg-fuchsia-50">
+        <nav>
+            <div class="max-w-7xl grid grid-cols-2 md:grid-cols-3 items-center md:px-6 mx-auto pt-3 pb-6 md:pb-12 md:pt-6">
+                <!-- Logo Small Device -->
+                <div class="grid col-span-2 pb-4 md:hidden">
+                    <div class="flex items-center justify-center">
+                        <img src="./assets/logo.png" alt="">
+                        <a class="btn btn-ghost text-2xl font-bold">Donate Bangladesh</a>
+                    </div>
+                </div>
+                <!-- Blog Button -->
+                <div class="flex justify-end pr-16 md:justify-start">
+                    <div>
+                        <button class="btn bg-lime-400 text-base md:text-lg font-bold" id="blog-btn">Blog</button>
+                    </div>
+                </div>
+                <!-- Logo Large Device-->
+                <div class="hidden md:grid">
+                    <div class="flex items-center justify-center">
+                        <img src="./assets/logo.png" alt="">
+                        <a class="btn btn-ghost text-2xl font-bold">Donate Bangladesh</a>
+                    </div>
+                </div>
+                <!-- Account balance -->
+                <div>
+                    <div class="flex items-center justify-start md:justify-end gap-2">
+                        <img src="./assets/coin.png" alt="">
+                        <p class="font-bold text-xl text-gray-500"><span id="nav-amount">5500</span> BDT</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Button Section -->
+        <section class="mt-8 mb-5 flex justify-center">
+            <div class="flex gap-3">
+                <!-- Donation -->
+                <button class="btn bg-lime-400 font-bold text-base text-black" id="donation-btn">Donation</button>
+                <!-- History -->
+                <button class="btn btn-outline font-bold text-base text-gray-500" id="history-btn">History</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+
     <script src="./js/index.js"></script>
 </body>
 </html>

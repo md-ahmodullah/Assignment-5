@@ -2,8 +2,10 @@
 <html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=feni.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/coin.png" type="image/x-icon">
     <!-- DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,57 +30,64 @@
     </script>
 </head>
 <body class="font-lexend">
-    <header class="bg-secondary">
-        <nav>
-            <div class="max-w-7xl grid grid-cols-2 md:grid-cols-3 items-center md:px-6 mx-auto pt-3 pb-6 md:pb-12 md:pt-6">
-                <!-- Logo Small Device -->
-                <div class="grid col-span-2 pb-4 md:hidden">
-                    <div class="flex items-center justify-center">
-                        <img src="./assets/logo.png" alt="">
-                        <a class="btn btn-ghost text-2xl font-bold">Donate Bangladesh</a>
+    <!-- <header class="bg-secondary relative"> -->
+    <header class="md:relative">
+        <!-- <div class="sticky top-96 h-56 bg-slate-50 border border-red-400"></div> -->
+         <!-- class="blur-lg" -->
+        <nav class="pb-5"> 
+            <!-- md:fixed md:top-0 -->
+            <div class="bg-secondary md:pb-3">
+                <div class="max-w-7xl grid grid-cols-2 md:grid-cols-3 items-center md:px-6 mx-auto pt-3 pb-6  md:pt-6">
+                    <!-- Logo Small Device -->
+                    <div class="grid col-span-2 pb-4 md:hidden">
+                        <div class="flex items-center justify-center">
+                            <img src="./assets/logo.png" alt="">
+                            <a class="btn btn-ghost text-2xl font-bold">Donate Bangladesh</a>
+                        </div>
                     </div>
-                </div>
-                <!-- Blog Button -->
-                <div class="flex justify-end pr-16 md:justify-start">
+                    <!-- Blog Button -->
+                    <div class="flex justify-end pr-16 md:justify-start">
+                        <div>
+                            <button class="btn bg-primary text-base md:text-lg font-bold" id="blog-btn">Blog</button>
+                        </div>
+                    </div>
+                    <!-- Logo Large Device-->
+                    <div class="hidden md:grid">
+                        <div class="flex items-center justify-center">
+                            <img src="./assets/logo.png" alt="">
+                            <a class="btn btn-ghost text-2xl font-bold">Donate Bangladesh</a>
+                        </div>
+                    </div>
+                    <!-- Account balance -->
                     <div>
-                        <button class="btn bg-primary text-base md:text-lg font-bold" id="blog-btn">Blog</button>
+                        <div class="flex items-center justify-start md:justify-end gap-2">
+                            <img src="./assets/coin.png" alt="">
+                            <p class="font-semibold text-xl text-gray-500"><span id="nav-amount">5500</span> BDT</p>
+                        </div>
                     </div>
                 </div>
-                <!-- Logo Large Device-->
-                <div class="hidden md:grid">
-                    <div class="flex items-center justify-center">
-                        <img src="./assets/logo.png" alt="">
-                        <a class="btn btn-ghost text-2xl font-bold">Donate Bangladesh</a>
-                    </div>
-                </div>
-                <!-- Account balance -->
-                <div>
-                    <div class="flex items-center justify-start md:justify-end gap-2">
-                        <img src="./assets/coin.png" alt="">
-                        <p class="font-semibold text-xl text-gray-500"><span id="nav-amount">5500</span> BDT</p>
-                    </div>
+            </div>
+            <!-- Button div -->
+            <div class="flex justify-center pt-8">
+                <div class="flex gap-8">
+                    <!-- Donation -->
+                    <button class="btn bg-primary font-bold text-base text-black" id="donation-btn">Donation</button>
+                    <!-- History -->
+                    <button class="btn btn-outline font-semibold text-base text-gray-500" id="history-btn">History</button>
                 </div>
             </div>
         </nav>
+
+        
     </header>
 
     <main>
-        <!-- Button Section -->
-        <section class="mt-8 mb-5 md:mt-20 flex justify-center">
-            <div class="flex gap-3">
-                <!-- Donation -->
-                <button class="btn bg-primary font-bold text-base text-black" id="donation-btn">Donation</button>
-                <!-- History -->
-                <button class="btn btn-outline font-semibold text-base text-gray-500" id="history-btn">History</button>
-            </div>
-        </section>
-
-        <!-- Card Post Section -->
-        <section class="max-w-7xl mx-auto px-6 my-9 space-y-8 ">
+        <!-- Donation Cards Section -->
+        <section class="max-w-7xl mx-auto px-6 my-9 space-y-8">
             <!-- Card noakhali Container -->
             <div class="border-2 rounded-2xl p-6">
                 <!-- Card noakhali -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Card noakhali Image -->
                     <div>
                         <img src="./assets/noakhali.png" alt="A Rescue Team in a Boat With Life Jacket on the water"  class="w-full max-h-96">
@@ -86,7 +95,7 @@
                     <!-- Card noakhali Content -->
                     <div class="space-y-4">
                         <!-- Card noakhali Total Donation -->
-                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-2/6 p-2">
+                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-1/2 md:w-2/6 p-2">
                             <img src="./assets/coin.png" alt="coin image">
                             <p class="font-semibold text-lg text-gray-500"><span id="noakhali-total">0</span> BDT</p>
                         </div>
@@ -105,15 +114,15 @@
             <!-- Card feni Container -->
             <div class="border-2 rounded-2xl p-6">
                 <!-- Card feni -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Card feni Image -->
                     <div>
-                        <img src="./assets/feni.png" alt="A Rescue Team in a Boat With Life Jacket on the water"  class="w-full max-h-96">
+                        <img src="./assets/feni.png" alt="A Big City with houses, building go under"  class="w-full max-h-96">
                     </div>
                     <!-- Card feni Content -->
                     <div class="space-y-4">
                         <!-- Card feni Total Donation -->
-                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-2/6 p-2">
+                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-1/2 md:w-2/6 p-2">
                             <img src="./assets/coin.png" alt="coin image">
                             <p class="font-semibold text-lg text-gray-500"><span id="feni-total">600</span> BDT</p>
                         </div>
@@ -132,15 +141,15 @@
             <!-- Card quota Container -->
             <div class="border-2 rounded-2xl p-6">
                 <!-- Card quota -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Card quota Image -->
                     <div>
-                        <img src="./assets/quota-protest.png" alt="A Rescue Team in a Boat With Life Jacket on the water"  class="w-full max-h-96">
+                        <img src="./assets/quota-protest.png" alt="Students those are badly injured and scared by the autocrate and her arm forces."  class="w-full max-h-96">
                     </div>
                     <!-- Card quota Content -->
                     <div class="space-y-4">
                         <!-- Card quota Total Donation -->
-                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-2/6 p-2">
+                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-1/2 md:w-2/6 p-2">
                             <img src="./assets/coin.png" alt="coin image">
                             <p class="font-semibold text-lg text-gray-500"><span id="feni-total">2400</span> BDT</p>
                         </div>
@@ -154,6 +163,22 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+         <section class="max-w-7xl mx-auto px-6 my-9 space-y-8 ">
+            <div class="border-2 rounded-2xl p-8 space-y-4">
+                <h2 class="text-xl font-semibold text-black">${96500} Taka is Donated for ${famine-2024 at Feni, Bangladesh}</h2>
+                <p class="text-base font-normal text-gray-500">Date : new Date().toLocaleString()</p>
+            </div>
+            <div class="border-2 rounded-2xl p-8 space-y-4">
+                <h2 class="text-xl font-semibold text-black">${96500} Taka is Donated for ${famine-2024 at Feni, Bangladesh}</h2>
+                <p class="text-base font-normal text-gray-500">Date : new Date().toLocaleString()</p>
+            </div>
+            <div class="border-2 rounded-2xl p-8 space-y-4">
+                <h2 class="text-xl font-semibold text-black">${96500} Taka is Donated for ${famine-2024 at Feni, Bangladesh}</h2>
+                <p class="text-base font-normal text-gray-500">Date : new Date().toLocaleString()</p>
             </div>
          </section>
     </main>

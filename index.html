@@ -2,14 +2,33 @@
 <html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=feni.0">
     <title>Document</title>
     <!-- DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lexend Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#B4F461',
+                secondary: '#1111110d'
+              },
+              fontFamily:{
+                lexend :'Lexend',
+              }
+            }
+          }
+        }
+    </script>
 </head>
-<body>
-    <header class="bg-fuchsia-50">
+<body class="font-lexend">
+    <header class="bg-secondary">
         <nav>
             <div class="max-w-7xl grid grid-cols-2 md:grid-cols-3 items-center md:px-6 mx-auto pt-3 pb-6 md:pb-12 md:pt-6">
                 <!-- Logo Small Device -->
@@ -22,7 +41,7 @@
                 <!-- Blog Button -->
                 <div class="flex justify-end pr-16 md:justify-start">
                     <div>
-                        <button class="btn bg-lime-400 text-base md:text-lg font-bold" id="blog-btn">Blog</button>
+                        <button class="btn bg-primary text-base md:text-lg font-bold" id="blog-btn">Blog</button>
                     </div>
                 </div>
                 <!-- Logo Large Device-->
@@ -36,7 +55,7 @@
                 <div>
                     <div class="flex items-center justify-start md:justify-end gap-2">
                         <img src="./assets/coin.png" alt="">
-                        <p class="font-bold text-xl text-gray-500"><span id="nav-amount">5500</span> BDT</p>
+                        <p class="font-semibold text-xl text-gray-500"><span id="nav-amount">5500</span> BDT</p>
                     </div>
                 </div>
             </div>
@@ -45,17 +64,101 @@
 
     <main>
         <!-- Button Section -->
-        <section class="mt-8 mb-5 flex justify-center">
+        <section class="mt-8 mb-5 md:mt-20 flex justify-center">
             <div class="flex gap-3">
                 <!-- Donation -->
-                <button class="btn bg-lime-400 font-bold text-base text-black" id="donation-btn">Donation</button>
+                <button class="btn bg-primary font-bold text-base text-black" id="donation-btn">Donation</button>
                 <!-- History -->
-                <button class="btn btn-outline font-bold text-base text-gray-500" id="history-btn">History</button>
+                <button class="btn btn-outline font-semibold text-base text-gray-500" id="history-btn">History</button>
             </div>
         </section>
+
+        <!-- Card Post Section -->
+        <section class="max-w-7xl mx-auto px-6 my-9 space-y-8 ">
+            <!-- Card noakhali Container -->
+            <div class="border-2 rounded-2xl p-6">
+                <!-- Card noakhali -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Card noakhali Image -->
+                    <div>
+                        <img src="./assets/noakhali.png" alt="A Rescue Team in a Boat With Life Jacket on the water"  class="w-full max-h-96">
+                    </div>
+                    <!-- Card noakhali Content -->
+                    <div class="space-y-4">
+                        <!-- Card noakhali Total Donation -->
+                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-2/6 p-2">
+                            <img src="./assets/coin.png" alt="coin image">
+                            <p class="font-semibold text-lg text-gray-500"><span id="noakhali-total">0</span> BDT</p>
+                        </div>
+                        <h2 class="text-black text-xl font-semibold">Donate for Flood at Noakhali, Bangladesh</h2>
+                        <p class="text-gray-500 text-base font-normal text-justify">Millions of people across Bangladesh are left stranded due to flash floods in noakhali, Cumilla, Noakhali areas. Donate today to our Bangladesh floods appeal to provide life-saving support. Many districts in Bangladesh have been underwater. All the houses and crops are underwater, and SPARBD is already in action to rescue those people and provide them with safe shelter, food, and medical support.</p>
+                        <div>
+                            <input type="text" class="w-full p-3 border-2 rounded-xl" placeholder="Write Donation Amount" id="noakhali-amount">
+                        </div>
+                        <div>
+                            <button class="btn bg-primary w-full" id="noakhali-button">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card feni Container -->
+            <div class="border-2 rounded-2xl p-6">
+                <!-- Card feni -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Card feni Image -->
+                    <div>
+                        <img src="./assets/feni.png" alt="A Rescue Team in a Boat With Life Jacket on the water"  class="w-full max-h-96">
+                    </div>
+                    <!-- Card feni Content -->
+                    <div class="space-y-4">
+                        <!-- Card feni Total Donation -->
+                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-2/6 p-2">
+                            <img src="./assets/coin.png" alt="coin image">
+                            <p class="font-semibold text-lg text-gray-500"><span id="feni-total">600</span> BDT</p>
+                        </div>
+                        <h2 class="text-black text-xl font-semibold">Donate for Flood at Feni, Bangladesh</h2>
+                        <p class="text-gray-500 text-base font-normal text-justify">Millions of people across Bangladesh are left stranded due to flash floods in noakhali, Cumilla, Noakhali areas. Donate today to our Bangladesh floods appeal to provide life-saving support. Many districts in Bangladesh have been underwater. All the houses and crops are underwater, and SPARBD is already in action to rescue those people and provide them with safe shelter, food, and medical support.</p>
+                        <div>
+                            <input type="text" class="w-full p-3 border-2 rounded-xl" placeholder="Write Donation Amount" id="feni-amount">
+                        </div>
+                        <div>
+                            <button class="btn bg-primary w-full" id="feni-button">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card quota Container -->
+            <div class="border-2 rounded-2xl p-6">
+                <!-- Card quota -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Card quota Image -->
+                    <div>
+                        <img src="./assets/quota-protest.png" alt="A Rescue Team in a Boat With Life Jacket on the water"  class="w-full max-h-96">
+                    </div>
+                    <!-- Card quota Content -->
+                    <div class="space-y-4">
+                        <!-- Card quota Total Donation -->
+                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-2/6 p-2">
+                            <img src="./assets/coin.png" alt="coin image">
+                            <p class="font-semibold text-lg text-gray-500"><span id="feni-total">2400</span> BDT</p>
+                        </div>
+                        <h2 class="text-black text-xl font-semibold">Aid for Injured in the Quota Movement</h2>
+                        <p class="text-gray-500 text-base font-normal text-justify">The movement, advocating for fair reservation policies, has resulted in several injuries, leaving many victims in urgent need of treatment and rehabilitation. This fund seeks to cover medical bills, therapy, and ongoing recovery needs, offering relief to those affected by the unrest. Your contribution will directly support the injured, helping them regain their health and stability.</p>
+                        <div>
+                            <input type="text" class="w-full p-3 border-2 rounded-xl" placeholder="Write Donation Amount" id="quota-amount">
+                        </div>
+                        <div>
+                            <button class="btn bg-primary w-full" id="quota-button">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </section>
     </main>
 
-    <footer>
+    <footer class="bg-secondary h-36 mt-20">
 
     </footer>
 

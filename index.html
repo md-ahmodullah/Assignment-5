@@ -50,7 +50,7 @@
                     <!-- Blog Button -->
                     <div class="flex justify-end pr-16 md:justify-start">
                         <div>
-                            <button class="btn bg-primary text-base md:text-lg font-bold" id="blog-btn">Blog</button>
+                            <button class="btn bg-primary text-base md:text-lg font-bold" id="blog-btn" onclick="blogWindow()">Blog</button>
                         </div>
                     </div>
                     <!-- Logo Large Device-->
@@ -142,7 +142,7 @@
                             <img src="./assets/coin.png" alt="coin image">
                             <p class="font-semibold text-lg text-gray-500"><span id="feni-total">600</span> BDT</p>
                         </div>
-                        <h2 class="text-black text-xl font-semibold">Donate for Flood at Feni, Bangladesh</h2>
+                        <h2 class="text-black text-xl font-semibold">Donate for <span id="feni-title">Flood at Feni, Bangladesh</span></h2>
                         <p class="text-gray-500 text-base font-normal text-justify">Millions of people across Bangladesh are left stranded due to flash floods in noakhali, Cumilla, Noakhali areas. Donate today to our Bangladesh floods appeal to provide life-saving support. Many districts in Bangladesh have been underwater. All the houses and crops are underwater, and SPARBD is already in action to rescue those people and provide them with safe shelter, food, and medical support.</p>
                         <div>
                             <input type="text" class="w-full p-3 border-2 rounded-xl" placeholder="Write Donation Amount" id="feni-amount">
@@ -181,9 +181,9 @@
                         <!-- Card quota Total Donation -->
                         <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-1/2 md:w-2/6 p-2">
                             <img src="./assets/coin.png" alt="coin image">
-                            <p class="font-semibold text-lg text-gray-500"><span id="feni-total">2400</span> BDT</p>
+                            <p class="font-semibold text-lg text-gray-500"><span id="quota-total">2400</span> BDT</p>
                         </div>
-                        <h2 class="text-black text-xl font-semibold">Aid for Injured in the Quota Movement</h2>
+                        <h2 class="text-black text-xl font-semibold" id="quota-title">Aid for Injured in the Quota Movement</h2>
                         <p class="text-gray-500 text-base font-normal text-justify">The movement, advocating for fair reservation policies, has resulted in several injuries, leaving many victims in urgent need of treatment and rehabilitation. This fund seeks to cover medical bills, therapy, and ongoing recovery needs, offering relief to those affected by the unrest. Your contribution will directly support the injured, helping them regain their health and stability.</p>
                         <div>
                             <input type="text" class="w-full p-3 border-2 rounded-xl" placeholder="Write Donation Amount" id="quota-amount">

@@ -37,6 +37,7 @@ function calcNoakhali() {
     const myAmount = makeNumber(navAmountSpan);
     if (amount < 0 || amount > myAmount || amount == '' || isNaN(amount)) {
             alert('Invalid Amount. Try again!');
+            noakhaliInputAmount.value = '';
             const modalId = document.getElementById('noakhali-button');
             modalId.removeAttribute('onclick');
             return
@@ -55,6 +56,7 @@ function calcFeni() {
     const myAmount = makeNumber(navAmountSpan);
     if (amount < 0 || amount > myAmount || amount == '' || isNaN(amount)) {
         alert('Invalid Amount. Try again!');
+        feniInputAmount.value = '';
         const modalId = document.getElementById('feni-button');
         modalId.removeAttribute('onclick');
         return
@@ -73,6 +75,7 @@ function calcQuota() {
     const myAmount = makeNumber(navAmountSpan);
     if (amount < 0 || amount > myAmount || amount == '' || isNaN(amount)) {
         alert('Invalid Amount. Try again!');
+        quotaInputAmount.value = '';
         const modalId = document.getElementById('quota-button');
         modalId.removeAttribute('onclick');
         return

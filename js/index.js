@@ -12,23 +12,14 @@ const navAmountSpan = getDataById('nav-amount');
 const historySection = getDataById('history');
 const date = new Date().toString();
 
-
 document.getElementById('history-btn').addEventListener('click', historyBtnFunction);
-
 document.getElementById('donation-btn').addEventListener('click', donationBtnFunction);
-
 noakhaliInputAmount.addEventListener('keyup', setOnClickNoa);
-
 document.getElementById('noakhali-button').addEventListener('click', calcNoakhali);
-
 feniInputAmount.addEventListener('keyup', setOnClickFeni);
-
 document.getElementById('feni-button').addEventListener('click', calcFeni);
-
 quotaInputAmount.addEventListener('keyup', setOnClickQuota);
-
 document.getElementById('quota-button').addEventListener('click', calcQuota);
-
 function donationBtnFunction(){
     removeProperty(donationEl, 'hidden');
     addProperty(historyEl, 'hidden');
@@ -41,7 +32,6 @@ function historyBtnFunction(){
     removeProperty(donationBtnEl, 'bg-primary');
     addProperty(historyBtnEl, 'bg-primary');
 }
-
 function calcNoakhali() {
     const amount = Number(noakhaliInputAmount.value);
     const initAmount = makeNumber(noakhaliTotalSpan);
@@ -96,20 +86,16 @@ function calcQuota() {
         showHistory(amount, 'quota-title');
     }
 }
-
 function blogWindow() {
     window.location.href = "./blog.html";
-}
-function backHome() {
-    window.location.href = "./index.html";
 }
 function showHistory(inputAmount, id) {
     const title = titleGenerator(id)
     const history1 = `<div class="border-2 rounded-2xl p-8 space-y-4">
-                <h2 class="text-xl font-semibold text-black">
+                <h2 class="text-sm md:text-xl font-semibold text-black">
                 ${inputAmount} Taka is Donated for ${title}.
                 </h2>
-                <p class="text-base font-normal text-gray-500">
+                <p class="text-xs md:text-base font-normal text-gray-500">
                 Date : ${date}
                 </p>
                 </div>`
@@ -136,11 +122,6 @@ function setOnClickQuota() {
         modalId.setAttribute('onclick', "my_modal_1.showModal()");
     }
 }
-// function showNavAmounBlog() {
-//     const blogAmount = document.getElementById('blog-amount')
-//     console.log(blogAmount);
-    
-// }
 // Re-usable Function
 function getDataById(id) {
     return document.getElementById(id);

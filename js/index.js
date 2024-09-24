@@ -10,7 +10,6 @@ const feniTotalSpan = getDataById('feni-total');
 const quotaTotalSpan = getDataById('quota-total');
 const navAmountSpan = getDataById('nav-amount');
 const historySection = getDataById('history');
-const date = new Date().toString();
 
 document.getElementById('history-btn').addEventListener('click', historyBtnFunction);
 document.getElementById('donation-btn').addEventListener('click', donationBtnFunction);
@@ -90,6 +89,7 @@ function blogWindow() {
     window.location.href = "./blog.html";
 }
 function showHistory(inputAmount, id) {
+    const date = new Date().toString();
     const title = titleGenerator(id)
     const history1 = `<div class="border-2 rounded-2xl p-8 space-y-4">
                 <h2 class="text-sm md:text-xl font-semibold text-black">

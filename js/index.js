@@ -98,10 +98,10 @@ function calcQuota() {
 }
 
 function blogWindow() {
-    window.location.href = "/blog.html";
+    window.location.href = "./blog.html";
 }
 function backHome() {
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
 }
 function showHistory(inputAmount, id) {
     const title = titleGenerator(id)

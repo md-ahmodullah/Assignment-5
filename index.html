@@ -32,41 +32,43 @@
     </script>
 </head>
 <body class="font-lexend">
-    <header>
-        <nav class="sticky top-0 z-50 bg-secondary backdrop-filter backdrop-blur-lg bg-opacity-60 border-b border-gray-400 md:pb-6">
-            <div class="max-w-7xl mx-auto md:px-6 pt-3 pb-6 md:py-4">
-                <div class="grid grid-cols-2 md:grid-cols-3 items-center">
-                    <!-- Logo Small Device -->
-                    <div class="grid col-span-2 pb-4 md:hidden">
-                        <div class="flex items-center justify-center">
-                            <img src="./assets/logo.png" alt="">
-                            <a class="btn btn-ghost text-2xl font-bold">Donate Bangladesh</a>
+    <header class="sticky top-0 z-50 bg-white backdrop-filter backdrop-blur-lg bg-opacity-60">
+        <nav>
+            <div class=" bg-amber-50 backdrop-filter backdrop-blur-lg bg-opacity-60">
+                <div class="max-w-7xl mx-auto md:px-6 pt-3 pb-6 md:py-4">
+                    <div class="grid grid-cols-2 md:grid-cols-3 items-center">
+                        <!-- Logo Small Device -->
+                        <div class="grid col-span-2 pb-4 md:hidden">
+                            <div class="flex items-center justify-center">
+                                <img src="./assets/logo.png" alt="">
+                                <a class="btn btn-ghost text-2xl font-bold">Donate Bangladesh</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Blog Button -->
-                    <div class="flex justify-end pr-16 md:justify-start">
+                        <!-- Blog Button -->
+                        <div class="flex justify-end pr-16 md:justify-start">
+                            <div>
+                                <button class="btn bg-primary text-base md:text-lg font-bold" id="blog-btn" onclick="blogWindow()">Blog</button>
+                            </div>
+                        </div>
+                        <!-- Logo Large Device-->
+                        <div class="hidden md:grid">
+                            <div class="flex items-center justify-center">
+                                <img src="./assets/logo.png" alt="">
+                                <a class="btn btn-ghost text-2xl font-bold">Donate Bangladesh</a>
+                            </div>
+                        </div>
+                        <!-- Account balance -->
                         <div>
-                            <button class="btn bg-primary text-base md:text-lg font-bold" id="blog-btn" onclick="blogWindow()">Blog</button>
-                        </div>
-                    </div>
-                    <!-- Logo Large Device-->
-                    <div class="hidden md:grid">
-                        <div class="flex items-center justify-center">
-                            <img src="./assets/logo.png" alt="">
-                            <a class="btn btn-ghost text-2xl font-bold">Donate Bangladesh</a>
-                        </div>
-                    </div>
-                    <!-- Account balance -->
-                    <div>
-                        <div class="flex items-center justify-start md:justify-end gap-2">
-                            <img src="./assets/coin.png" alt="">
-                            <p class="font-semibold text-2xl text-gray-500"><span id="nav-amount">5500</span> BDT</p>
+                            <div class="flex items-center justify-start md:justify-end gap-2">
+                                <img src="./assets/coin.png" alt="">
+                                <p class="font-semibold text-2xl text-gray-500"><span id="nav-amount">5500</span> BDT</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Button div -->
-            <div class="flex justify-center pt-10">
+            <div class="flex justify-center py-5 md:pt-10 md:pb-12">
                 <div class="flex gap-8">
                     <!-- Donation -->
                     <button class="btn bg-primary font-bold text-base text-black" id="donation-btn">Donation</button>

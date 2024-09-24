@@ -136,6 +136,11 @@ function setOnClickQuota() {
         modalId.setAttribute('onclick', "my_modal_1.showModal()");
     }
 }
+// function showNavAmounBlog() {
+//     const blogAmount = document.getElementById('blog-amount')
+//     console.log(blogAmount);
+    
+// }
 // Re-usable Function
 function getDataById(id) {
     return document.getElementById(id);

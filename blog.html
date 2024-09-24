@@ -60,12 +60,23 @@
                     <div>
                         <div class="flex items-center justify-start md:justify-end gap-2">
                             <img src="./assets/coin.png" alt="">
-                            <p class="font-semibold text-xl text-gray-500"><span id="nav-amount">5500</span> BDT</p>
+                            <p class="font-semibold text-xl text-gray-500"><span id="blog-amount">5500</span> BDT</p>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
+        <!-- Button div -->
+        <div class="hidden">
+            <div class="flex justify-center pt-10">
+                <div class="flex gap-8">
+                    <!-- Donation -->
+                    <button class="btn bg-primary font-bold text-base text-black" id="donation-btn">Donation</button>
+                    <!-- History -->
+                    <button class="btn btn-outline font-semibold text-base text-black" id="history-btn">History</button>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -76,7 +87,7 @@
                 <div tabindex="0" class="collapse collapse-arrow border-base-300 bg-base-200 border">
                     <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
                     <div class="collapse-content">
-                      <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML or XML document as a tree of objects, allowing developers to manipulate content, structure, and styles dynamically using languages like JavaScript.</p>
+                    <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML or XML document as a tree of objects, allowing developers to manipulate content, structure, and styles dynamically using languages like JavaScript.</p>
                     </div>
                 </div>
             </div>
@@ -84,7 +95,7 @@
                 <div tabindex="0" class="collapse collapse-arrow border-base-300 bg-base-200 border">
                     <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
                     <div class="collapse-content">
-                      <p>To manipulate an element's attributes and styles using the DOM, use methods like `setAttribute()`, `getAttribute()`, or directly modify properties like `element.style.propertyName` for inline CSS styles.</p>
+                    <p>To manipulate an element's attributes and styles using the DOM, use methods like `setAttribute()`, `getAttribute()`, or directly modify properties like `element.style.propertyName` for inline CSS styles.</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +103,7 @@
                 <div tabindex="0" class="collapse collapse-arrow border-base-300 bg-base-200 border">
                     <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
                     <div class="collapse-content">
-                      <p>Event delegation attaches a single event listener to a parent element to handle events from its child elements. It's efficient, reduces memory use, and supports dynamically added child elements.</p>
+                    <p>Event delegation attaches a single event listener to a parent element to handle events from its child elements. It's efficient, reduces memory use, and supports dynamically added child elements.</p>
                     </div>
                 </div>
             </div>
@@ -100,12 +111,142 @@
                 <div tabindex="0" class="collapse collapse-arrow border-base-300 bg-base-200 border">
                     <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
                     <div class="collapse-content">
-                      <p>You can select a DOM element using methods like `getElementById()`, `getElementsByClassName()`, `querySelector()`, or `querySelectorAll()` to retrieve elements based on their ID, class, or CSS selectors.</p>
+                    <p>You can select a DOM element using methods like `getElementById()`, `getElementsByClassName()`, `querySelector()`, or `querySelectorAll()` to retrieve elements based on their ID, class, or CSS selectors.</p>
                     </div>
-                  </div>
+                </div>
             </div>
         </section>
+        <!-- Donation Cards Section -->
+        <section class="max-w-7xl mx-auto px-6 my-12 space-y-8 hidden" id="donation">
+            <!-- Card noakhali Container -->
+            <div class="border-2 rounded-2xl p-6">
+                <!-- Card noakhali -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Card noakhali Image -->
+                    <div>
+                        <img src="./assets/noakhali.png" alt="A Rescue Team in a Boat With Life Jacket on the water"  class="w-full max-h-96">
+                    </div>
+                    <!-- Card noakhali Content -->
+                    <div class="space-y-4">
+                        <!-- Card noakhali Total Donation -->
+                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-1/2 md:w-2/6 p-2">
+                            <img src="./assets/coin.png" alt="coin image">
+                            <p class="font-semibold text-lg text-gray-500"><span id="noakhali-total">0</span> BDT</p>
+                        </div>
+                        <h2 class="text-black text-xl font-semibold" >Donate for <span id="noakhali-title">Flood at Noakhali, Bangladesh</span></h2>
+                        <p class="text-gray-500 text-base font-normal text-justify">Millions of people across Bangladesh are left stranded due to flash floods in noakhali, Cumilla, Noakhali areas. Donate today to our Bangladesh floods appeal to provide life-saving support. Many districts in Bangladesh have been underwater. All the houses and crops are underwater, and SPARBD is already in action to rescue those people and provide them with safe shelter, food, and medical support.</p>
+                        <div>
+                            <input type="text" class="w-full p-3 border-2 rounded-xl" placeholder="Write Donation Amount" id="noakhali-amount">
+                        </div>
+                        <div>
+                            <button class="btn bg-primary w-full" id="noakhali-button">Donate Now</button>
+                            <dialog id="my_modal_1" class="modal">
+                                <div class="modal-box flex flex-col items-center">
+                                    <h3 class="text-4xl font-bold pb-4">Congratulations!</h3>
+                                    <p class="text-primary text-5xl"><i class="fa-regular fa-circle-check"></i></p>
+                                    <p class="py-4 text-gray-500">You have donated for humankind.</p>
+                                    <p class="text-center text-3xl text-lime-400 font-bold">Successfully</p>
+                                    <div class="modal-action">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close Information</button>
+                                    </form>
+                                    </div>
+                                </div>
+                            </dialog>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card feni Container -->
+            <div class="border-2 rounded-2xl p-6">
+                <!-- Card feni -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Card feni Image -->
+                    <div>
+                        <img src="./assets/feni.png" alt="A Big City with houses, building go under"  class="w-full max-h-96">
+                    </div>
+                    <!-- Card feni Content -->
+                    <div class="space-y-4">
+                        <!-- Card feni Total Donation -->
+                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-1/2 md:w-2/6 p-2">
+                            <img src="./assets/coin.png" alt="coin image">
+                            <p class="font-semibold text-lg text-gray-500"><span id="feni-total">600</span> BDT</p>
+                        </div>
+                        <h2 class="text-black text-xl font-semibold">Donate for <span id="feni-title">Flood at Feni, Bangladesh</span></h2>
+                        <p class="text-gray-500 text-base font-normal text-justify">Millions of people across Bangladesh are left stranded due to flash floods in noakhali, Cumilla, Noakhali areas. Donate today to our Bangladesh floods appeal to provide life-saving support. Many districts in Bangladesh have been underwater. All the houses and crops are underwater, and SPARBD is already in action to rescue those people and provide them with safe shelter, food, and medical support.</p>
+                        <div>
+                            <input type="text" class="w-full p-3 border-2 rounded-xl" placeholder="Write Donation Amount" id="feni-amount">
+                        </div>
+                        <div>
+                            <button class="btn bg-primary w-full" id="feni-button">Donate Now</button>
+                            <dialog id="my_modal_2" class="modal">
+                                <div class="modal-box flex flex-col items-center">
+                                    <h3 class="text-4xl font-bold pb-4">Congratulations!</h3>
+                                    <p class="text-primary text-5xl"><i class="fa-regular fa-circle-check"></i></p>
+                                    <p class="py-4 text-gray-500">You have donated for humankind.</p>
+                                    <p class="text-center text-3xl text-lime-400 font-bold">Successfully</p>
+                                    <div class="modal-action">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close Information</button>
+                                    </form>
+                                    </div>
+                                </div>
+                            </dialog>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card quota Container -->
+            <div class="border-2 rounded-2xl p-6">
+                <!-- Card quota -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Card quota Image -->
+                    <div>
+                        <img src="./assets/quota-protest.png" alt="Students those are badly injured and scared by the autocrate and her arm forces."  class="w-full max-h-96">
+                    </div>
+                    <!-- Card quota Content -->
+                    <div class="space-y-4">
+                        <!-- Card quota Total Donation -->
+                        <div class="flex items-center justify-center gap-2 rounded-lg bg-secondary w-1/2 md:w-2/6 p-2">
+                            <img src="./assets/coin.png" alt="coin image">
+                            <p class="font-semibold text-lg text-gray-500"><span id="quota-total">2400</span> BDT</p>
+                        </div>
+                        <h2 class="text-black text-xl font-semibold" id="quota-title">Aid for Injured in the Quota Movement</h2>
+                        <p class="text-gray-500 text-base font-normal text-justify">The movement, advocating for fair reservation policies, has resulted in several injuries, leaving many victims in urgent need of treatment and rehabilitation. This fund seeks to cover medical bills, therapy, and ongoing recovery needs, offering relief to those affected by the unrest. Your contribution will directly support the injured, helping them regain their health and stability.</p>
+                        <div>
+                            <input type="text" class="w-full p-3 border-2 rounded-xl" placeholder="Write Donation Amount" id="quota-amount">
+                        </div>
+                        <div>
+                            <button class="btn bg-primary w-full" id="quota-button">Donate Now</button>
+                            <dialog id="my_modal_3" class="modal">
+                                <div class="modal-box flex flex-col items-center">
+                                    <h3 class="text-4xl font-bold pb-4">Congratulations!</h3>
+                                    <p class="text-primary text-5xl"><i class="fa-regular fa-circle-check"></i></p>
+                                    <p class="py-4 text-gray-500">You have donated for humankind.</p>
+                                    <p class="text-center text-3xl text-lime-400 font-bold">Successfully</p>
+                                    <div class="modal-action">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close Information</button>
+                                    </form>
+                                    </div>
+                                </div>
+                            </dialog>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="max-w-7xl mx-auto px-6 my-9 space-y-8 hidden" id="history">
+        </section>
     </main>
+        
 
     <footer class="bg-secondary h-36 mt-20">
 
